@@ -5,73 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bat Ball Stump Game</title>
   <style>
-    body {
-      text-align: center;
-      padding: 200px;
-      background-image:url(/2604895.jpg);
-    background-position: 100%;
-     background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  font-family: Arial, sans-serif;
-  
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('/2604895.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+      color: #0d0a0a;
+    }
 
     h1 {
-
-        margin-left: 200px;
+      font-size: 3rem;
       margin-bottom: 30px;
     }
 
     .buttons {
-        margin-left: 200px;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      flex-wrap: wrap;
       margin-bottom: 30px;
+      width: 100%;
+      max-width: 400px;
     }
 
     button {
-        
-      padding: 12px 24px;
-      font-size: 18px;
+      flex: 1 1 30%;
+      padding: 15px;
+      font-size: 1.2rem;
       border: none;
       border-radius: 10px;
-      background-color: #fff;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      background-color: #f0ebebdd;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
       cursor: pointer;
       transition: transform 0.2s, background-color 0.3s;
     }
 
     button:hover {
-      background-color: #f0f0f0;
+      background-color: #f3eeee;
       transform: scale(1.05);
     }
 
-    .result {
-        margin-left: 200px;
-      font-size: 22px;
-      margin-top: 20px;
-      color: #333;
-    }
-
-    .score {
-          margin-left: 200px;
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
+    .result, .score {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #ffffffcc;
+      border-radius: 8px;
+      max-width: 400px;
+      width: 100%;
     }
 
     @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
       .buttons {
         flex-direction: column;
+        gap: 15px;
       }
 
       button {
-        width: 70%;
-        margin: 10px auto;
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+      }
+
+      .result, .score {
+        font-size: 1rem;
       }
     }
   </style>
@@ -113,8 +128,8 @@
       }
 
       document.getElementById('resultText').innerHTML = `
-        You chose <strong>${userChoice}</strong> <br>
-        Computer chose <strong>${computerChoice}</strong> <br>
+        You chose <strong>${userChoice}</strong><br>
+        Computer chose <strong>${computerChoice}</strong><br>
         <strong>${result}</strong>
       `;
 
